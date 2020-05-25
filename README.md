@@ -18,20 +18,30 @@ It was build at the Institute for Communication Techonlogies and Embedded System
     <source-dir> location of your repo copy,  e.g. /home/lukas/avp64_sw
     ```
 
-4. You can find the build scripts in `<source-dir>/linux`:
+4. You can find the build scripts for linux in `<source-dir>/linux`:
     ```
     build_linux_bootcode_el1el2.sh
     build_linux_bootcode_el3.sh
     build_linux_buildroot.sh
     ```
 
-5. Execute the scripts:
+5. You can find the build scripts for xen in `<source-dir>/xen`:
+    ```
+    build_xen_bootcode.sh
+    build_xen_dom0_buildroot.sh
+    build_xen_dom1_buildroot.sh
+    build_xen_sdcard_image.sh
+    ```
+
+6. Execute the scripts:
     ```
     <source-dir>/linux/<script_name>.sh
+    <source-dir>/xen/<script_name>.sh
     ```  
-   Note: If the user is not a member of the group `docker`, the scripts have to be run as `root`. For more details see docker [documentation](https://docs.docker.com/). 
+   Note: If the user is not a member of the group `docker`, the scripts have to be run as `root`. For more details see docker [documentation](https://docs.docker.com/).   
+   If you want to build xen, you should execute `<source-dir>/xen/build_xen_sdcard_image.sh` at the end.
 
-6. The output can be found at `<source-dir>/linux/BUILD`.
+7. The output can be found at `<source-dir>/linux/BUILD` and `<source-dir>/xen/BUILD`.
 
 ----
 ## License
